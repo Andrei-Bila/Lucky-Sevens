@@ -1,0 +1,109 @@
+<!--
+Name: andrei Bila
+Date Created: 30.1.2021
+Most Recent Version:
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+      crossorigin="anonymous">
+    <title>Lucky Sevens</title>
+
+    <style>
+      h1 {
+        text-align: center;
+      }
+      table.table td{
+        border: 2px solid black;
+        border-collapse: collapse;
+        padding: 5px;
+      }
+      div.results{
+        border-top: 1px solid black;
+        margin: 5px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+
+      <!-- Title of the page is here: -->
+      <h1>Lucky Sevens</h1>
+
+      <!-- Form begins here: -->
+      <form name="luckySevensGame" class="needs-validation" onsubmit="return luckySevens();"
+        onreset="resetView();" novalidate>
+
+        <!-- First row of the form with the label and input text: -->
+        <div class="form-row">
+          <div class="col col-3">
+            <label for="startingBet">Starting Bet:</label>
+          </div>
+          <div class="col col-3">
+            <input type="number" min = "1"class="form-control" id="startingBet" required placeholder="$ 0.00">
+            <div class="invalid-feedback">
+              The bet amount must be larger than $ 0.00 !
+            </div>
+          </div>
+        </div>
+
+        <!-- Second row with play and playagain buttons -->
+        <div class="form-row">
+          <div class="col">
+            <button type="submit" id="playButton" class="btn btn-primary"> Play</button>
+            <button type="reset" id="replayButton" style="display: none" class="btn btn-secondary"> Play Again</button>
+          </div>
+        </div>
+
+      </form>
+
+      <div class="results" style="display: none" id="results">
+        <h1>Results</h1>
+        <!-- Table with results is here: -->
+        <table class="table table-striped table-bordered">
+          <tbody>
+
+            <tr><!--First Row-->
+              <td>Starting Bet</td>
+              <td>$ <span id="resultsTableStartBet"></span>.00</td>
+            </tr>
+
+            <tr><!--Second Row-->
+              <td>Total rolls Before going Broke</td>
+              <td><span id="resultsTableRolls"></span></td>
+            </tr>
+
+            <tr><!--Third Row-->
+              <td>Highest Amount Won</td>
+              <td>$ <span id="resultsTableWin"></span>.00</td>
+            </tr>
+
+            <tr><!--Forth Row-->
+              <td>Roll Count at Highest Amount Won</td>
+              <td><span id="resultsTableWinRolls"></span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div><!-- Hidden results section-->
+
+
+    </div><!-- Container -->
+
+    <script src="luckySevens.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+      integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+      crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+      integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+      crossorigin="anonymous"></script>
+  </body>
+</html>
